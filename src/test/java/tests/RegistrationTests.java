@@ -21,6 +21,7 @@ public class RegistrationTests extends TestBase {
                 yearOfBirth = String.valueOf(getRandomInt(1900,2100)),
                 subject = getRandomItemFromArray(subjects),
                 randomHobbies = getRandomItemFromArray(hobbies),
+                picture = "test.jpg",
                 currentAddress = faker.address().streetAddress(),
                 randomState = testData.state,
                 randomCity = testData.city;
@@ -34,7 +35,7 @@ public class RegistrationTests extends TestBase {
                 .setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth)
                 .setSubjects(subject)
                 .selectHobbies(randomHobbies)
-                .upLoadPictureInput("test.jpg")
+                .upLoadPictureInput(picture)
                 .setCurrentAddress(currentAddress)
                 .selectStateCity(randomState, randomCity)
                 .submit();
@@ -46,7 +47,7 @@ public class RegistrationTests extends TestBase {
                 .checkResult("Date of Birth", dayOfBirth + " " + monthOfBirth + "," + yearOfBirth)
                 .checkResult("Subjects", subject)
                 .checkResult("Hobbies", randomHobbies)
-                .checkResult("Picture", "test.jpg")
+                .checkResult("Picture", picture)
                 .checkResult("Address", currentAddress)
                 .checkResult("State and City", randomState + " " + randomCity);
     }
