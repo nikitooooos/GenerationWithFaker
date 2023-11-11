@@ -2,9 +2,6 @@ package tests;
 
 import com.github.javafaker.Faker;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class TestData {
 
     Faker faker = new Faker();
